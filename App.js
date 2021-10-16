@@ -9,12 +9,26 @@
 import React from 'react';
 import type {Node} from 'react';
 import {SafeAreaView, Text} from 'react-native';
+import SignIn from './src/scene/auth/SignIn';
+import CreateAccount from './src/scene/auth/CreateAccount';
+import {createStackNavigator} from '@react-navigation/stack';
+import 'react-native-gesture-handler';
+import {NavigationContainer} from '@react-navigation/native';
+
+const Stack = createStackNavigator();
+
+const AuthNavStack = () => (
+  <Stack.Navigator initialRouteName="CreateAccount">
+    <Stack.Screen name="SignIn" component={SignIn} />
+    <Stack.Screen name="CreateAccount" component={CreateAccount} />
+  </Stack.Navigator>
+);
 
 const App: () => Node = () => {
   return (
-    <SafeAreaView>
-      <Text>Hi there</Text>
-    </SafeAreaView>
+    <NavigationContainer>
+      <AuthNavStack />
+    </NavigationContainer>
   );
 };
 
