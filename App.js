@@ -18,7 +18,7 @@ import {NavigationContainer} from '@react-navigation/native';
 const Stack = createStackNavigator();
 
 const AuthNavStack = () => (
-  <Stack.Navigator initialRouteName="CreateAccount">
+  <Stack.Navigator initialRouteName="SignIn">
     <Stack.Screen name="SignIn" component={SignIn} />
     <Stack.Screen name="CreateAccount" component={CreateAccount} />
   </Stack.Navigator>
